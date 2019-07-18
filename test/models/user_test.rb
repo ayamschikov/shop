@@ -3,7 +3,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  include FactoryBot::Syntax::Methods
   test 'invalid without name' do
     user = build(:user, name: nil)
     assert_not user.valid?, 'user is valid without a name'
