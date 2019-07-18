@@ -5,22 +5,22 @@ require 'test_helper'
 class ProductTest < ActiveSupport::TestCase
   test 'invalid product name' do
     @product = build(:product, name: nil)
-    assert_not @product.valid?, 'product is valid without name'
+    assert_not @product.valid?
   end
 
   test 'invalid product price' do
     @product = build(:product, price_cents: nil)
-    assert_not @product.valid?, 'product is valid without price'
+    assert_not @product.valid?
   end
 
   test 'invalid product amount' do
     @product = build(:product, amount: nil)
-    assert_not @product.valid?, 'product is valid without amount'
+    assert_not @product.valid?
   end
 
   test 'invalid product description' do
     @product = build(:product, short_description: nil)
-    assert_not @product.valid?, 'product is valid without description'
+    assert_not @product.valid?
   end
 
   test 'product price must be positive' do
