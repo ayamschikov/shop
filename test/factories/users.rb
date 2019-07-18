@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :user do
-    name { "Bob" }
-    surname { "Brown" }
-    email { "example@gmail.com" }
+    name
+    surname
+    email
   end
 end
