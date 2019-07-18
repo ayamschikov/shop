@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2019_07_16_122857) do
     t.text "full_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

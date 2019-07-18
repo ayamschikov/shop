@@ -7,6 +7,5 @@ FactoryBot.define do
     amount
     short_description
     full_description
-    end
   end
 end
