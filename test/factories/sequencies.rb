@@ -8,6 +8,6 @@ FactoryBot.define do
     "user-#{n}"
   end
   sequence :integer, aliases: %i[price_cents amount] do |n|
-    rand(1...100)
+    n
   end
 end
