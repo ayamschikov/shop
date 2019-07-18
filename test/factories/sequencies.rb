@@ -7,16 +7,13 @@ FactoryBot.define do
   sequence :string, aliases: %i[name surname] do |n|
     "user-#{n}"
   end
-  sequence :name do |n|
-    "Product #{n}"
-  end
-  sequence :integer, aliases: %i[price_cents amount] do
+  sequence :integer, aliases: %i[price_cents amount] do |n|
     rand(1...100)
   end
   sequence :short_description do
-    "delicious #{name}"
+    "delicious product"
   end
   sequence :full_description do
-    "#{amount} very tasty #{name} for the price of one piece #{price_cents} #{price_currency}"
+    "very tasty product for the price of one piece"
   end
 end
