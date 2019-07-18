@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
-  Money.locale_backend = :i18n
   factory :product do
-    name {'apple'}
-    price_cents { 10 }
-    amount { 12 }
-    short_description { 'delicious apple' }
-    full_description { 'aaaaaa' }
+    sequence(:name) { |n| "Product #{n}" }
+    sequence(:price_cents) { rand(1...100) }
+    sequence(:amount) { rand(1...20) }
+    sequence(:short_description) { "delicious #{name}" }
+    sequence(:full_description) do
+      "#{amount} very tasty #{name} for the price of one piece #{price_cents} #{price_currency}"
+    end
   end
 end
