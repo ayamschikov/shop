@@ -1,0 +1,29 @@
+%ul.navbar Shop
+- if @product.errors.any? 
+  %div{:id => "error_explanation"}
+    %h2
+      = pluralize(@product.errors.count, 'error')
+      = "prohibited this article from being saved:"
+    %ul 
+      - @product.errors.full_messages.each do |message|
+        %li= message
+
+= form_with scope: :product, url: admin_products_path, local: true do |form|
+  %p
+    = form.label :name 
+    = form.text_field :name
+  %p 
+    = form.label :price 
+    = form.text_field :price 
+  %p 
+    = form.label :amount 
+    = form.text_field :amount
+  %p 
+    = form.label :short_description 
+    = form.text_field :short_description
+  %p 
+    = form.label :full_description 
+    = form.text_area :full_description
+  %p 
+    = form.submit
+  = link_to "Back", admin_products_path
