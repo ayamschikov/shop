@@ -1,0 +1,16 @@
+%p
+  %strong= "name: "
+  = @product.name
+%p
+  %strong= "price: "
+  = "#{@product.price_cents / 100} #{@product.price_currency}"
+%p 
+  %strong= "amount: "
+  = @product.amount
+%p 
+  %strong= "short description: "
+  = @product.short_description
+%p 
+  %strong= "full description: "
+  = @product.full_description
+= link_to "Back", admin_products_path
