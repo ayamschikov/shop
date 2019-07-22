@@ -1,26 +1,3 @@
-%ul.navbar Shop
-- if @user.errors.any? 
-  %div{:id => "error_explanation"}
-    %h2
-      = pluralize(@user.errors.count, 'error')
-      = "prohibited this article from being saved:"
-    %ul 
-      - @user.errors.full_messages.each do |message|
-        %li= message
-
-= form_with model: @user, url: admin_user_path, local: true do |form|
-  %p
-    = form.label :name 
-    = form.text_field :name
-  %p 
-    = form.label :surname 
-    = form.text_field :surname 
-  %p 
-    = form.label :email 
-    = form.text_field :email
-  %p 
-    = form.label :role 
-    = form.text_field :role
-  %p 
-    = form.submit
-  = link_to "Back", admin_users_path
+%h1 Edit user
+= render 'form'
+= link_to 'Back', admin_users_path
