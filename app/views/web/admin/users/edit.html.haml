@@ -8,7 +8,7 @@
       - @user.errors.full_messages.each do |message|
         %li= message
 
-= form_with scope: :user, url: admin_users_path, local: true do |form|
+= form_with model: @user, url: admin_user_path, local: true do |form|
   %p
     = form.label :name 
     = form.text_field :name

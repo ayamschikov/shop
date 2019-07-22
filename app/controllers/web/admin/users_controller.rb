@@ -18,7 +18,7 @@ class Web::Admin::UsersController < ApplicationController
 	  def create
 	    @user = User.new(user_params)
 	
-	    if @users.save
+	    if @user.save
 	      redirect_to admin_user_path(@user)
 	    else
 	      render 'new'
