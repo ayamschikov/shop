@@ -5,6 +5,7 @@ require 'test_helper'
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @product = create(:product)
+    @attributes = attributes_for :product
   end
 
   test 'should get index' do
@@ -20,14 +21,23 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test 'should create product' do
     product = build(:product)
 
+    manualParams = { product: {
+      name: product.name,
+      amount: product.amount,
+      price: product.price,
+      short_description: product.short_description,
+      full_description: product.full_description
+    } }
+    puts "MANUAL PARAMS: #{manualParams}"
+
+    generatedParams = { product: @attributes }
+    puts "GENERATED PARAMS: #{generatedParams}"
+
+    p = { product: product.attributes }
+    puts "ATTRIBUTES: #{p}"
+
     assert_difference('Product.count') do
-      post admin_products_url, params: { product: {
-        name: product.name,
-        amount: product.amount,
-        price: product.price,
-        short_description: product.short_description,
-        full_description: product.full_description
-      } }
+      post admin_products_url, params: p
     end
 
     assert_redirected_to admin_product_url(Product.last)

@@ -47,6 +47,6 @@ class Web::Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :amount, :short_description, :full_description)
+    params.require(:product).permit(%i[name price amount short_description full_description])
   end
 end

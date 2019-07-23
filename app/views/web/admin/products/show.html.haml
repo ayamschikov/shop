@@ -1,16 +1,19 @@
+= render "web/admin/shared/navbar"
+
 %p
-  %strong= "name: "
+  %strong= t 'product.name'
   = @product.name
 %p
-  %strong= "price: "
-  = "#{@product.price_cents / 100} #{@product.price_currency}"
+  %strong= t 'product.price'
+  = humanized_money_with_symbol @product.price
 %p 
-  %strong= "amount: "
+  %strong= t 'product.amount'
   = @product.amount
 %p 
-  %strong= "short description: "
+  %strong= t 'product.short_description'
   = @product.short_description
 %p 
-  %strong= "full description: "
+  %strong= t 'product.full_description'
   = @product.full_description
-= link_to "Back", admin_products_path
+%p
+= link_to "#{t :back}", admin_products_path

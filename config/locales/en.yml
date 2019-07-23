@@ -30,4 +30,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    submit:
+      product:
+        create: "Create product"
+        update: "Update product"
+
+  product: 
+    name: "Name"
+    price: "Price"
+    amount: "Amount"
+    short_description: "Short description"
+    full_description: "Full descriprion"
+
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
+  back: "Back"
+  confirmation: "Are you sure?"
+
