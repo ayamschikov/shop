@@ -19,25 +19,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create product' do
-    product = build(:product)
-
-    manualParams = { product: {
-      name: product.name,
-      amount: product.amount,
-      price: product.price,
-      short_description: product.short_description,
-      full_description: product.full_description
-    } }
-    puts "MANUAL PARAMS: #{manualParams}"
-
-    generatedParams = { product: @attributes }
-    puts "GENERATED PARAMS: #{generatedParams}"
-
-    p = { product: product.attributes }
-    puts "ATTRIBUTES: #{p}"
-
     assert_difference('Product.count') do
-      post admin_products_url, params: p
+      post admin_products_url, params: { product: @attributes }
     end
 
     assert_redirected_to admin_product_url(Product.last)

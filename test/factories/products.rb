@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :product do
     name
-    price_cents
+    price
     amount
     short_description
     full_description
