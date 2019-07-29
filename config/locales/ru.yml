@@ -29,35 +29,35 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+ru:
   helpers:
     submit:
-      create: "Create %{model}"
-      update: "Save Changes"
+      create: "Создать %{model}"
+      update: "Обновить %{model}"
 
-  show: "Show"
-  edit: "Edit"
-  delete: "Delete"
-  back: "Back"
-  confirmation: "Are you sure?"
-
+  show: "Показать"
+  edit: "Редактировать"
+  delete: "Удалить"
+  back: "Назад"
+  confirmation: "Вы уверены?"
+  
   activerecord:
     models:
-      product: "product"
+      product: "продукт"
     attributes: 
       product:
-        name: "Name"
-        price: "Price"
-        amount: "Amount"
-        short_description: "Short description"
-        full_description: "Full description"
+        name: "Название"
+        price: "Цена"
+        amount: "Кол-во"
+        short_description: "Краткое описание"
+        full_description: "Полное описание"
 
   simple_form:
     labels:
       product: 
-          name: "Name"
-          price: "Price"
-          amount: "Amount"
-          short_description: "Short description"
-          full_description: "Full descriprion"
+        name: "Название"
+        price: "Цена"
+        amount: "Кол-во"
+        short_description: "Краткое описание"
+        full_description: "Полное описание"
 
