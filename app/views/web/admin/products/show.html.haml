@@ -1,19 +1,18 @@
-= render "web/admin/shared/navbar"
-
 %p
-  %strong= t 'product.name'
+  -# %strong= Product.human_attribute_name(:name)
+  %strong= t "activerecord.attributes.product.name"
   = @product.name
 %p
-  %strong= t 'product.price'
+  %strong= Product.human_attribute_name(:price)
   = humanized_money_with_symbol @product.price
 %p 
-  %strong= t 'product.amount'
+  %strong= Product.human_attribute_name(:amount)
   = @product.amount
 %p 
-  %strong= t 'product.short_description'
+  %strong= Product.human_attribute_name(:short_description)
   = @product.short_description
 %p 
-  %strong= t 'product.full_description'
+  %strong= Product.human_attribute_name(:full_description)
   = @product.full_description
 %p
 = link_to "#{t :back}", admin_products_path

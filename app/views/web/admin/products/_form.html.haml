@@ -1,28 +1,18 @@
-- if @product.errors.any? 
-  %div{:id => "error_explanation"}
-    %h2
-      = pluralize(@product.errors.count, 'error')
-      = "prohibited this article from being saved:"
-    %ul 
-      - @product.errors.full_messages.each do |message|
-        %li= message
-
-= form_with model: [:admin, @product], local: true do |form|
+= simple_form_for [:admin, @product] do |f|
   %p
-    = form.label t 'product.name' 
-    = form.text_field :name
-  %p 
-    = form.label t 'product.price'
-    = form.text_field :price 
-  %p 
-    = form.label t 'product.amount'
-    = form.text_field :amount
-  %p 
-    = form.label t 'product.short_description'
-    = form.text_field :short_description
-  %p 
-    = form.label t 'product.full_description'
-    = form.text_area :full_description
-  %p 
-    = form.submit
-  = link_to "#{t :back}", admin_products_path
+    = f.input :name
+  %p
+    = f.label :price  
+    = f.input_field :price 
+    = f.error :price_cents, id: 'price_error' 
+  %p
+    = f.input :amount
+  %p
+    = f.input :short_description
+  %p
+    = f.input :full_description
+  %p
+    = f.submit
+
+= link_to "#{t :back}", admin_products_path
+

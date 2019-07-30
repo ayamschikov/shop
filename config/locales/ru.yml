@@ -41,6 +41,15 @@ ru:
   back: "Назад"
   confirmation: "Вы уверены?"
   
+  simple_form:
+    labels:
+      product: 
+        name: "Название"
+        price: "Цена"
+        amount: "Кол-во"
+        short_description: "Краткое описание"
+        full_description: "Полное описание"
+  
   activerecord:
     models:
       product: "продукт"
@@ -52,12 +61,16 @@ ru:
         short_description: "Краткое описание"
         full_description: "Полное описание"
 
-  simple_form:
-    labels:
-      product: 
-        name: "Название"
-        price: "Цена"
-        amount: "Кол-во"
-        short_description: "Краткое описание"
-        full_description: "Полное описание"
-
+    errors:
+      models:
+        product:
+          attributes:
+            name:
+              blank: "поле не может быть пустым"
+            price_cents:
+              greater_than: "цена должна быть больше 0"
+            amount:
+              not_a_number: "кол-во должно быть числом"
+              greater_than: "кол-во должно быть больше 0"
+            short_description:
+              blank: "поле не может быть пустым"

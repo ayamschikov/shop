@@ -1,14 +1,12 @@
-= render "web/admin/shared/navbar"
-
 %strong List of products
 %p 
   =link_to "Create product", new_admin_product_path
 
 %table
   %tr
-    %th= t 'product.name'
-    %th= t 'product.price'
-    %th= t 'product.amount'
+    %th= Product.human_attribute_name(:name)
+    %th= Product.human_attribute_name(:price)
+    %th= Product.human_attribute_name(:amount)
     %th{:colspan => 3}
   - @products.each do |product|
     %tr
