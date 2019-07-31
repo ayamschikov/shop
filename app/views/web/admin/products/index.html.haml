@@ -13,8 +13,8 @@
       %td= product.name
       %td= humanized_money_with_symbol product.price
       %td= product.amount
-      %td= link_to "#{t :edit}", edit_admin_product_path(product)
-      %td= link_to "#{t :show}", admin_product_path(product)
-      %td= link_to "#{t :delete}", admin_product_path(product), 
+      %td= link_to t(:edit), edit_admin_product_path(product)
+      %td= link_to t(:show), admin_product_path(product)
+      %td= link_to t(:delete), admin_product_path(product), 
       method: :delete, 
-      data: { confirm: "#{t :confirmation}" }
+      data: { confirm: t(:confirmation) }

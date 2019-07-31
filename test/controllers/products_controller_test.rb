@@ -37,11 +37,13 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update product' do
-    patch admin_product_url(@product), params: { product: { name: 'updated' } }
+    updated_name = "updated"
+
+    patch admin_product_url(@product), params: { product: { name: updated_name } }
     assert_redirected_to [:admin, :product]
 
     @product.reload
-    assert_equal "updated", @product.name
+    assert_equal updated_name, @product.name
   end
 
   test 'should destroy product' do
