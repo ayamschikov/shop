@@ -1,6 +1,5 @@
 %p
-  -# %strong= Product.human_attribute_name(:name)
-  %strong= t "activerecord.attributes.product.name"
+  %strong= Product.human_attribute_name(:name)
   = @product.name
 %p
   %strong= Product.human_attribute_name(:price)

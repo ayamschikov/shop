@@ -1,0 +1,26 @@
+ru:
+  titles:
+    index: "Список продуктов"
+    new: "Создать новый продукт"
+    edit: "Редактирование продукта"
+    create: "Создать новый продукт"
+
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"
+
+  show: "Показать"
+  edit: "Редактировать"
+  delete: "Удалить"
+  back: "Назад"
+  confirmation: "Вы уверены?"
+  
+  simple_form:
+    labels:
+      product: 
+        name: "Название"
+        price: "Цена"
+        amount: "Кол-во"
+        short_description: "Краткое описание"
+        full_description: "Полное описание"

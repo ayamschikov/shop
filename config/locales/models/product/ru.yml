@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+      product: "продукт"
+    attributes: 
+      product:
+        name: "Название"
+        price: "Цена"
+        amount: "Кол-во"
+        short_description: "Краткое описание"
+        full_description: "Полное описание"
