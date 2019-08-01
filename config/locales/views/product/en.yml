@@ -1,9 +1,13 @@
 en:
-  titles:
-    index: "List of products"
-    new: "Create a new product"
-    edit: "Edit the product"
-    create: "Create new product"
+  product:
+    index:
+      title: "List of products"
+    new:
+      title: "Create a new product"
+    edit:
+      title: "Edit the product"
+    create:
+      title: "Create new product"
 
   helpers:
     submit:
