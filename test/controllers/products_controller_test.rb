@@ -37,7 +37,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update product' do
-    updated_name = 'updated'
+    updated_name = generate(:string)
 
     patch admin_product_url(@product), params: { product: { name: updated_name } }
     assert_redirected_to %i[admin product]
