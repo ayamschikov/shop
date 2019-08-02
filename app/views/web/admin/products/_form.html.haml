@@ -1,0 +1,15 @@
+= simple_form_for [:admin, @product] do |f|
+  %p
+    = f.input :name
+  %p
+    = f.input :price
+  %p
+    = f.input :amount
+  %p
+    = f.input :short_description
+  %p
+    = f.input :full_description
+  %p
+    = f.submit
+
+= link_to t(:back), admin_products_path
