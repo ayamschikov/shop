@@ -41,6 +41,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'enumerize'
 gem "haml-rails", "~> 2.0"
 gem 'money-rails', '~>1.12'
+gem 'russian'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

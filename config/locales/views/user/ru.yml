@@ -1,0 +1,27 @@
+ru:
+  user:
+    index: "Список пользователей"
+    new: "Создать нового пользователя"
+    edit: "Редактирование пользователя"
+    create: "Создать нового пользователя"
+
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"
+
+  show: "Показать"
+  edit: "Редактировать"
+  delete: "Удалить"
+  back: "Назад"
+  confirmation: "Вы уверены?"
+  
+  simple_form:
+    labels:
+      user:
+        name: "Имя"
+        surname: "Фамилия"
+        email: "электронная почта"
+        role: "администратор/слиент"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
