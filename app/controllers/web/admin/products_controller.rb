@@ -38,6 +38,7 @@ class Web::Admin::ProductsController < ApplicationController
   end
 
   def destroy
+    # TODO: set isDeleted to true
     @product = Product.find(params[:id])
     @product.destroy
 

@@ -1,0 +1,24 @@
+ru:
+  order:
+    index: "Список заказов"
+    new: "Создать новый заказ"
+    edit: "Редактирование заказа"
+    create: "Создать новый заказ"
+
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"
+
+  show: "Показать"
+  edit: "Редактировать"
+  delete: "Удалить"
+  back: "Назад"
+  confirmation: "Вы уверены?"
+  
+  simple_form:
+    labels:
+      order: 
+        id: "№"
+        total_price: "Стоимость"
+        created_at: "Дата заказа"

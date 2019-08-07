@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_16_123347) do
+ActiveRecord::Schema.define(version: 2019_08_06_071520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "order_products", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "product_id"
+    t.integer "amount"
+    t.integer "price_each_cents", default: 0, null: false
+    t.string "price_each_currency", default: "USD", null: false
+    t.index ["order_id"], name: "index_order_products_on_order_id"
+    t.index ["product_id"], name: "index_order_products_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "total_price_cents", default: 0, null: false
+    t.string "total_price_currency", default: "USD", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -36,4 +55,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_123347) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "order_products", "orders"
+  add_foreign_key "order_products", "products"
+  add_foreign_key "orders", "users"
 end
