@@ -1,0 +1,8 @@
+%h2= "Order's list of products"
+
+- @order.order_products.each do |order_product|
+  %p= link_to order_product.product.name, admin_product_path(order_product.product)
+  %p= "#{order_product.amount} items,
+  #{humanized_money_with_symbol(order_product.total_price_per_product)} total"
+
+= link_to t(:back), admin_orders_path

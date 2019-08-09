@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_071520) do
     t.bigint "order_id"
     t.bigint "product_id"
     t.integer "amount"
-    t.integer "price_each_cents", default: 0, null: false
-    t.string "price_each_currency", default: "USD", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
     t.index ["order_id"], name: "index_order_products_on_order_id"
     t.index ["product_id"], name: "index_order_products_on_product_id"
   end
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_071520) do
     t.bigint "user_id"
     t.integer "total_price_cents", default: 0, null: false
     t.string "total_price_currency", default: "USD", null: false
+    t.boolean "isDeleted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_orders_on_user_id"

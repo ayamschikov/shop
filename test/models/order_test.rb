@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class OrderTest < ActiveSupport::TestCase
-  test "creating orders for user" do
+  test 'creating orders for user' do
     # order = build(:order)
     order = create(:order)
     puts order.new_record?
@@ -14,7 +16,7 @@ class OrderTest < ActiveSupport::TestCase
     # puts user_with_orders.orders.inspect
   end
 
-  # test "many to many" do 
+  # test "many to many" do
   #   order = create(:order)
   #   # puts order.user.inspect
   #   puts order.inspect

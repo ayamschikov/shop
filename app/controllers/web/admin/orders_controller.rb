@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Web::Admin::OrdersController < ApplicationController
   def index
-    @orders = Order.all
+    @orders = Order.where(isDeleted: false)
   end
 
   def show
@@ -8,42 +10,37 @@ class Web::Admin::OrdersController < ApplicationController
   end
 
   def new
-    products = Product.all
     @order = Order.new
   end
 
-  def edit 
+  def edit
+    @order = Order.find(params[:id])
   end
 
   def create
-    product_ids = params.require(:order)[:product_ids].reject!(&:blank?)
-    products = Product.find(product_ids)
-    total_price_cents = products.reduce(0) { |sum, product| sum + product.price_cents }
-
-    # TODO: Replace with Find user
-    user = User.first 
-    order = user.orders.create(total_price_cents: total_price_cents)
-
-    # TODO: add amount. price_each = amount * product.price
-    products.each do |product| 
-      order.order_products.create(
-        product_id: product.id,
-        price_each: product.price,
-        amount: 2,
-      )
-    end
+    user = User.first
+    user.orders.create!(order_params)
 
     redirect_to admin_orders_path
   end
 
   def update
+    @order = Order.find(params[:id])
   end
 
   def destroy
-    # TODO: set isDeleted to true
-    order = Order.find(params[:id]) 
-    order.destroy!
+    order = Order.find(params[:id])
+    order.isDeleted = true
+    order.save
 
     redirect_to admin_orders_path
+  end
+
+  private
+
+  def order_params
+    params
+      .require(:order)
+      .permit(order_products_attributes: %i[product_id amount])
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :order do
     user
@@ -7,7 +9,7 @@ FactoryBot.define do
       products_count { 5 }
     end
 
-    after(:create) do |order, evaluator|
+    after(:create) do |_order, evaluator|
       create_list(:order, evaluator.products_count)
     end
   end

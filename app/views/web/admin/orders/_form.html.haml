@@ -1,11 +1,8 @@
 = simple_form_for [:admin, @order] do |f|
-  %p
-    -# = f.association :products, label_method: :full_name, value_method: :id, as: :check_boxes
-    -# <%= f.association :owner_type, :include_blank => false, :label_method => lambda { |owner| "#{owner.name} | #{owner.subtype_name}" } %>
-
-  -# %p
-  -#   = f.input :amount
-  %p
-    = f.submit
-
-= link_to t(:back), admin_orders_path
+  %h3 Order items
+  #order_products
+    = f.simple_fields_for :order_products do |order_product|
+      = render 'order_product_fields', f: order_product
+    .links
+      = link_to_add_association 'add order_product', f, :order_products
+  = f.submit
