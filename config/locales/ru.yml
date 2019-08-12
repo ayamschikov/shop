@@ -1,5 +1,5 @@
 ru:
   common:
     back: 'Назад'
-    sigin: 'Войти'
+    sign_in: 'Войти'
     exit: 'Выход'

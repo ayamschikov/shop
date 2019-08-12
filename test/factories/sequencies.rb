@@ -10,4 +10,7 @@ FactoryBot.define do
   sequence :integer, aliases: %i[price_cents amount] do |n|
     n
   end
+  sequence :password, aliases: %i[password_confirmation] do
+    '123456'
+  end
 end

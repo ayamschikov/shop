@@ -7,12 +7,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %p#notice.notice= notice
-    %p.alert= alert
     - if user_signed_in?
       = link_to t('common.exit'), destroy_user_session_path, method: :delete
       %p
         Account: #{current_user.email}
     - else
-      = link_to t('common.sigin'), new_user_session_path
+      = link_to t('common.sign_in'), new_user_session_path
     = yield
