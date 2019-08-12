@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
@@ -49,7 +51,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test 'should destroy user' do
     assert_difference('User.count', -1) do
       delete admin_user_url(@user)
-  end
+    end
 
     assert_redirected_to admin_users_url
   end

@@ -1,30 +1,24 @@
 - if @user.errors.any? 
   %div{:id => "error_explanation"}
     %h2
-      = pluralize(@user.errors.count, 'error')
-      = "prohibited this article from being saved:"
+      = t('activerecord.errors.template.header',
+          :model => User.model_name.human, :count => @user.errors.count)
     %ul 
       - @user.errors.full_messages.each do |message|
         %li= message
 
-= form_with model: [:admin, @user], local: true do |form|
+= simple_form_for [:admin, @user] do |f|
   %p
-    = form.label :name 
-    = form.text_field :name
-  %p 
-    = form.label :surname 
-    = form.text_field :surname 
-  %p 
-    = form.label :email 
-    = form.text_field :email
-  %p 
-    = form.label :role 
-    = form.text_field :role
-  %p 
-    = form.label :password
-    = form.text_field :password
-  %p 
-    = form.label :password_confirmation
-    = form.text_field :password_confirmation
-  %p 
-    = form.submit
+    = f.input :name
+  %p
+    = f.input :surname
+  %p
+    = f.input :email
+  %p
+    = f.input :role
+  %p
+    = f.input :password
+  %p
+    = f.input :password_confirmation  
+  %p
+    = f.submit

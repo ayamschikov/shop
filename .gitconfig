@@ -1,6 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	name = Vasliy Varakin
+#	email = vasliyvarakin@Vasliys-MacBook-Pro.local
 [user]
   email = bukawandr@gmail.com
-  name = "Bukasik"
+  name = "Vasiliy Varakin"
 [color]
   branch = auto
   diff = auto
