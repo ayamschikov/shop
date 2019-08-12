@@ -7,7 +7,7 @@ ru:
         name: "Имя"
         surname: "Фамилия"
         email: "Электронная почта"
-        role: "Администратор/Клиент"
+        role: "Роль"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
     errors:

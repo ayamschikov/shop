@@ -3,9 +3,9 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
-  # frozen_string_literal: true
   setup do
     @user = create(:user)
+    @attributes = attributes_for :user
   end
 
   test 'should get index' do
@@ -22,12 +22,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     user = build(:user)
 
     assert_difference('User.count') do
-      post admin_users_url, params: { user: {
-        name: user.name,
-        surname: user.surname,
-        email: user.email,
-        role: user.role
-      } }
+      post admin_users_url, params: { user: @attributes}
     end
 
     assert_redirected_to admin_user_url(User.last)
