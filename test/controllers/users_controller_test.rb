@@ -19,10 +19,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create user' do
-    user = build(:user)
+    @user = build(:user)
 
     assert_difference('User.count') do
-      post admin_users_url, params: { user: @attributes}
+      post admin_users_url, params: { user: @attributes }
     end
 
     assert_redirected_to admin_user_url(User.last)
@@ -39,8 +39,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update user' do
-    patch admin_user_url(@user), params: { user: { name: 'new name' } }
+    updated_name = generate(:string)
+
+    patch admin_user_url(@user), params: { user: { name: updated_name } }
     assert_redirected_to admin_users_url(@user)
+
+    @user.reload
+    assert_equal updated_name, @user.name
   end
 
   test 'should destroy user' do
