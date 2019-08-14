@@ -3,22 +3,13 @@
 require 'test_helper'
 
 class OrderTest < ActiveSupport::TestCase
-  test 'creating orders for user' do
-    # order = build(:order)
-    order = create(:order)
-    puts order.new_record?
-    puts order.user.new_record?
-    puts order.inspect
-    # user = create(:user)
-    # user_with_orders = build(:user_with_orders)
+  test 'must calculate total_price' do
+    order = create(:order_with_products)
 
-    # puts user.orders.inspect
-    # puts user_with_orders.orders.inspect
+    total_price_cents = order.order_products.reduce(0) do |sum, order_product|
+      sum + order_product.amount * order_product.product.price_cents
+    end
+
+    assert_equal order.total_price_cents, total_price_cents 
   end
-
-  # test "many to many" do
-  #   order = create(:order)
-  #   # puts order.user.inspect
-  #   puts order.inspect
-  # end
 end

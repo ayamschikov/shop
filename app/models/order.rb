@@ -8,7 +8,7 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :order_products
 
-  monetize :total_price_cents
+  monetize :total_price_cents, presence: true
 
   before_save :set_order_total_price
 

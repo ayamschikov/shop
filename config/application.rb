@@ -16,7 +16,7 @@ module Shop
     I18n.available_locales = %i[en ru]
     I18n.default_locale = :ru
 
-    Money.locale_backend = nil
+    Money.locale_backend = :i18n
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
