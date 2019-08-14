@@ -15,6 +15,8 @@ module Shop
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     I18n.available_locales = %i[en ru]
     I18n.default_locale = :ru
+
+    Money.locale_backend = nil
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

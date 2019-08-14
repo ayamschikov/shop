@@ -1,8 +1,9 @@
 = simple_form_for [:admin, @order] do |f|
-  %h3 Order items
   #order_products
     = f.simple_fields_for :order_products do |order_product|
       = render 'order_product_fields', f: order_product
     .links
-      = link_to_add_association 'add order_product', f, :order_products
+      = link_to_add_association t(:add_product), f, :order_products
   = f.submit
+
+= link_to t(:back), admin_orders_path

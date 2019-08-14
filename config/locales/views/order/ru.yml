@@ -4,6 +4,7 @@ ru:
     new: "Создать новый заказ"
     edit: "Редактирование заказа"
     create: "Создать новый заказ"
+    show: "Содержание заказа"
 
   helpers:
     submit:
@@ -11,10 +12,14 @@ ru:
       update: "Обновить %{model}"
 
   show: "Показать"
-  edit: "Редактировать"
   delete: "Удалить"
   back: "Назад"
   confirmation: "Вы уверены?"
+
+  products_amount: 'шт.'
+   
+  add_product: "Добавить продукт"
+  remove_product: "Удалить продукт"
   
   simple_form:
     labels:

@@ -5,5 +5,5 @@ ru:
     attributes: 
       order:
         id: "№"
-        total_price: "Стоимость"
+        total_price: "Итоговая стоимость"
         created_at: "Дата заказа"

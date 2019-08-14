@@ -10,22 +10,15 @@ class Web::Admin::OrdersController < ApplicationController
   end
 
   def new
+    @products = Product.where("amount > '0'")
     @order = Order.new
-  end
-
-  def edit
-    @order = Order.find(params[:id])
   end
 
   def create
     user = User.first
-    user.orders.create!(order_params)
+    user.orders.create(order_params)
 
     redirect_to admin_orders_path
-  end
-
-  def update
-    @order = Order.find(params[:id])
   end
 
   def destroy
