@@ -1,0 +1,27 @@
+en:
+  product:
+    index: "List of products"
+    new: "Create a new product"
+    edit: "Edit the product"
+    create: "Create new product"
+
+  helpers:
+    submit:
+      create: "Create %{model}"
+      update: "Save Changes"
+
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
+  back: "Back"
+  confirmation: "Are you sure?"
+
+  simple_form:
+    labels:
+      product: 
+        name: "Name"
+        price: "Price"
+        amount: "Amount"
+        short_description: "Short description"
+        full_description: "Full descriprion"
+

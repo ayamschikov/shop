@@ -41,7 +41,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'enumerize'
 gem 'haml-rails', '~> 2.0'
 gem 'money-rails', '~>1.12'
-gem 'russian'
+gem 'russian', '~> 0.6.0'
 gem 'simple_form'
 
 group :development, :test do
