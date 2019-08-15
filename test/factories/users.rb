@@ -5,5 +5,7 @@ FactoryBot.define do
     name
     surname
     email
+    password
+    password_confirmation
   end
 end
