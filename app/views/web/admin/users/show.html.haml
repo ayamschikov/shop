@@ -1,0 +1,13 @@
+%p
+  %strong= User.human_attribute_name(:name)
+  = @user.name
+%p
+  %strong= User.human_attribute_name(:surname)
+  = @user.surname
+%p 
+  %strong= User.human_attribute_name(:email)
+  = @user.email
+%p 
+  %strong= User.human_attribute_name(:role)
+  = @user.role
+= link_to t(:back), admin_users_path

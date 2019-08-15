@@ -1,0 +1,27 @@
+en:
+  user:
+    index: "List of user"
+    new: "Create a new user"
+    edit: "Edit the user"
+    create: "Create new user"
+
+  helpers:
+    submit:
+      create: "Create %{model}"
+      update: "Save Changes"
+
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
+  back: "Back"
+  confirmation: "Are you sure?"
+
+  simple_form:
+    labels:
+      user:
+        name: "Name"
+        surname: "Surname"
+        email: "Email"
+        role: "admin/client"
+        password: "Password"
+        password_confirmation: "Confirmation password"

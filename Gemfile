@@ -42,6 +42,7 @@ gem 'devise'
 gem 'enumerize'
 gem 'haml-rails', '~> 2.0'
 gem 'money-rails', '~>1.12'
+gem 'russian', '~> 0.6.0'
 gem 'simple_form'
 
 group :development, :test do

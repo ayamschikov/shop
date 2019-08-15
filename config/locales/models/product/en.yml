@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      product: "product"
+    attributes: 
+      product:
+        name: "Name"
+        price: "Price"
+        amount: "Amount"
+        short_description: "Short description"
+        full_description: "Full description"

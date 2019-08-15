@@ -1,0 +1,24 @@
+- if @user.errors.any? 
+  %div{:id => "error_explanation"}
+    %h2
+      = t('activerecord.errors.template.header',
+          :model => User.model_name.human, :count => @user.errors.count)
+    %ul 
+      - @user.errors.full_messages.each do |message|
+        %li= message
+
+= simple_form_for [:admin, @user] do |f|
+  %p
+    = f.input :name
+  %p
+    = f.input :surname
+  %p
+    = f.input :email
+  %p
+    = f.input :role
+  %p
+    = f.input :password
+  %p
+    = f.input :password_confirmation  
+  %p
+    = f.submit
