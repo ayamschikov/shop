@@ -3,12 +3,12 @@
 require 'test_helper'
 
 class OrderProductTest < ActiveSupport::TestCase
-  test "invalid product amount" do 
+  test 'invalid product amount' do
     order_product = build(:order_product, amount: nil)
     assert_not order_product.valid?
   end
 
-  test "amount must be positive" do 
+  test 'amount must be positive' do
     order_product = build(:order_product, amount: -7)
     assert_not order_product.valid?
   end
@@ -31,7 +31,7 @@ class OrderProductTest < ActiveSupport::TestCase
     end
 
     order.save!
-    
+
     assert_equal product_amount - reduce_by, product.amount
   end
 

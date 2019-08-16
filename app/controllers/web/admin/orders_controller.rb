@@ -16,9 +16,15 @@ class Web::Admin::OrdersController < ApplicationController
 
   def create
     user = User.first
-    user.orders.create(order_params)
 
-    redirect_to admin_orders_path
+    @order = user.orders.build(order_params)
+
+    if @order.save
+      redirect_to admin_order_path(@order)
+    else
+      @products = Product.where("amount > '0'")
+      render 'new'
+    end
   end
 
   def destroy

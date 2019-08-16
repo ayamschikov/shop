@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :order do
     user
 
-    factory :order_with_products do 
+    factory :order_with_products do
       transient do
         product_amount { generate(:integer) }
         reduce_by { rand(1..product_amount) }

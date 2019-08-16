@@ -10,6 +10,6 @@ class OrderTest < ActiveSupport::TestCase
       sum + order_product.amount * order_product.product.price_cents
     end
 
-    assert_equal order.total_price_cents, total_price_cents 
+    assert_equal order.total_price_cents, total_price_cents
   end
 end
