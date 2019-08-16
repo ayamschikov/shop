@@ -1,0 +1,7 @@
+ru:
+  activerecord:
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+        invalid: 'недействительный'
+        greater_than_or_equal_to: может иметь значение большее или равное %{count}

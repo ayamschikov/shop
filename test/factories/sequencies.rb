@@ -7,7 +7,7 @@ FactoryBot.define do
   sequence Money, 100, aliases: %i[price] do |n|
     Money.new(n, 'USD')
   end
-  sequence :string, aliases: %i[name surname short_description full_description] do |n|
+  sequence :string, aliases: %i[name surname short_description full_description password] do |n|
     "user-#{n}"
   end
   sequence :integer, aliases: %i[amount] do |n|
