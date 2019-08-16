@@ -5,6 +5,8 @@ require 'test_helper'
 class OrderControllerTest < ActionDispatch::IntegrationTest
   setup do
     @order = create(:order_with_products)
+    user = create(:user)
+    sign_in(user)
   end
 
   test 'should get index' do

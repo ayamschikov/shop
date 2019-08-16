@@ -2,7 +2,7 @@
 
 class Web::Admin::OrdersController < ApplicationController
   def index
-    @orders = Order.where(aasm_state: 'actual')
+    @orders = Order.where(user: current_user, aasm_state: 'actual')
   end
 
   def show
@@ -10,19 +10,15 @@ class Web::Admin::OrdersController < ApplicationController
   end
 
   def new
-    @products = products
     @order = Order.new
   end
 
   def create
-    user = User.first
-
-    @order = user.orders.build(order_params)
+    @order = current_user.orders.build(order_params)
 
     if @order.save
       redirect_to admin_order_path(@order)
     else
-      @products = products
       render 'new'
     end
   end
@@ -40,9 +36,5 @@ class Web::Admin::OrdersController < ApplicationController
     params
       .require(:order)
       .permit(order_products_attributes: %i[product_id amount])
-  end
-
-  def products
-    Product.where("amount > 0 AND aasm_state = 'actual'")
   end
 end

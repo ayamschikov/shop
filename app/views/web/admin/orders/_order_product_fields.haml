@@ -1,4 +1,4 @@
 .nested-fields
-  = f.association :product, collection: @products, label_method: :full_name, value_method: :id 
+  = f.association :product, collection: actual_products, label_method: :full_name, value_method: :id 
   = f.input :amount
   = link_to_remove_association t(:remove_product), f
