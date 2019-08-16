@@ -41,13 +41,12 @@ class OrderControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should mark order as Deleted' do
+  test 'should set state to deleted' do
     assert_difference('Order.count', 0) do
       delete admin_order_url(@order)
     end
 
     @order.reload
-
-    assert @order.isDeleted
+    assert @order.deleted?
   end
 end

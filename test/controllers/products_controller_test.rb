@@ -46,10 +46,13 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_equal updated_name, @product.name
   end
 
-  test 'should destroy product' do
-    assert_difference('Product.count', -1) do
+  test 'should set state to deleted' do
+    assert_difference('Product.count', 0) do
       delete admin_product_url(@product)
     end
+
+    @product.reload
+    assert @product.deleted?
 
     assert_redirected_to %i[admin products]
   end

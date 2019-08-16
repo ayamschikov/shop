@@ -2,7 +2,7 @@
 
 class Web::Admin::OrdersController < ApplicationController
   def index
-    @orders = Order.where(isDeleted: false)
+    @orders = Order.where(aasm_state: 'actual')
   end
 
   def show
@@ -10,7 +10,7 @@ class Web::Admin::OrdersController < ApplicationController
   end
 
   def new
-    @products = Product.where("amount > '0'")
+    @products = products
     @order = Order.new
   end
 
@@ -22,15 +22,14 @@ class Web::Admin::OrdersController < ApplicationController
     if @order.save
       redirect_to admin_order_path(@order)
     else
-      @products = Product.where("amount > '0'")
+      @products = products
       render 'new'
     end
   end
 
   def destroy
     order = Order.find(params[:id])
-    order.isDeleted = true
-    order.save
+    order.remove!
 
     redirect_to admin_orders_path
   end
@@ -41,5 +40,9 @@ class Web::Admin::OrdersController < ApplicationController
     params
       .require(:order)
       .permit(order_products_attributes: %i[product_id amount])
+  end
+
+  def products
+    Product.where("amount > 0 AND aasm_state = 'actual'")
   end
 end

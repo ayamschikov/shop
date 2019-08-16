@@ -2,7 +2,7 @@
 
 class Web::Admin::ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.where(aasm_state: 'actual')
   end
 
   def show
@@ -38,9 +38,8 @@ class Web::Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    # TODO: set isDeleted to true
     @product = Product.find(params[:id])
-    @product.destroy
+    @product.remove!
 
     redirect_to admin_products_path
   end
