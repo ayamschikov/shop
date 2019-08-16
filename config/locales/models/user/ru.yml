@@ -1,0 +1,18 @@
+ru:
+  activerecord:
+    models:
+      user: "Пользователь"
+    attributes: 
+      user:
+        name: "Имя"
+        surname: "Фамилия"
+        email: "Электронная почта"
+        role: "Роль"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+    errors:
+      template:
+        body: 'Проблемы возникли со следующими полями:'
+        header:
+          one: "сохранение не удалось из-за ошибки"
+          other: "сохранение не удалось из-за ошибок"

@@ -38,9 +38,12 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'devise'
 gem 'enumerize'
-gem "haml-rails", "~> 2.0"
+gem 'haml-rails', '~> 2.0'
 gem 'money-rails', '~>1.12'
+gem 'russian', '~> 0.6.0'
+gem 'simple_form'
 
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
