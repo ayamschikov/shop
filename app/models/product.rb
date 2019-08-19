@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Product < ApplicationRecord
+  include ProductRepository
   include AASM
 
   has_many :order_products

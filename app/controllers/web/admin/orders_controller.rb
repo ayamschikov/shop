@@ -2,11 +2,11 @@
 
 class Web::Admin::OrdersController < ApplicationController
   def index
-    @orders = Order.where(user: current_user, aasm_state: 'actual')
+    @orders = current_user.orders.actual
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.actual.find(params[:id])
   end
 
   def new
@@ -24,7 +24,7 @@ class Web::Admin::OrdersController < ApplicationController
   end
 
   def destroy
-    order = Order.find(params[:id])
+    order = Order.actual.find(params[:id])
     order.remove!
 
     redirect_to admin_orders_path
