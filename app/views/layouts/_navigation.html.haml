@@ -1,9 +1,17 @@
-%nav.navbar.navbar-inverse.navbar-fixed-top
+.navbar.navbar-default.navbar-static-top
   .container
-    .navbar-header
-      - if user_signed_in?
-        = link_to t('common.exit'), destroy_user_session_path, method: :delete
-        %span
-          Account: #{current_user.email}
-      - else
-        = link_to t('common.sign_in'), new_user_session_path
+    %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.navbar-brand=t(:shop)
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      %ul.nav.navbar-nav
+        - if user_signed_in?
+          %li= link_to t('common.exit'), destroy_user_session_path, method: :delete
+          - if current_user.role == "admin"
+            %li= link_to "Пользователи", admin_users_path
+            %li= link_to "Продукты", admin_products_path
+          - else
+            %li= link_to "Продукты", admin_products_path
+          %li= link_to "Account: #{current_user.email}", admin_user_path(current_user)

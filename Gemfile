@@ -48,8 +48,8 @@ gem 'simple_form'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 
-gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

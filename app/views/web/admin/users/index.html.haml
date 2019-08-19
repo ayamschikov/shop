@@ -1,20 +1,20 @@
 %strong= t 'user.index'
 %p 
-  =link_to t('user.create'), new_admin_user_path
+  =link_to t('user.create'), new_admin_user_path, class: "btn btn-success"
 
 %table
-  %tr
-    %th= User.human_attribute_name(:name)
-    %th= User.human_attribute_name(:surname)
-    %th= User.human_attribute_name(:email)
+  %tr.row
+    %th.col-md-3= User.human_attribute_name(:name)
+    %th.col-md-3= User.human_attribute_name(:surname)
+    %th.col-md-3= User.human_attribute_name(:email)
     %th{:colspan => 3}
   - @users.each do |user|
-    %tr
-      %td= user.name
-      %td= user.surname
-      %td= user.email
-      %td= link_to t(:edit), edit_admin_user_path(user)
-      %td= link_to t(:show), admin_user_path(user)
-      %td= link_to t(:delete), admin_user_path(user), 
+    %tr.row
+      %td.col-md-2= user.name
+      %td.col-md-2= user.surname
+      %td.col-md-2= user.email
+      %td.col-md-2= link_to t(:edit), edit_admin_user_path(user), class: "btn btn-warning"
+      %td.col-md-2= link_to t(:show), admin_user_path(user), class: "btn btn-primary"
+      %td.col-md-2= link_to t(:delete), admin_user_path(user), class: "btn btn-danger",
       method: :delete, 
       data: { confirm: "Are you sure?" }
