@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+      order: "заказ"
+    attributes: 
+      order:
+        id: "№"
+        total_price: "Итоговая стоимость"
+        created_at: "Дата заказа"

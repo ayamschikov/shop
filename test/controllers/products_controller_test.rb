@@ -59,6 +59,9 @@ class Web::Admin::ProductsControllerTest < ActionController::TestCase
       delete :destroy, params: { id: @product }
     end
 
+    @product.reload
+    assert @product.deleted?
+
     assert_redirected_to %i[admin products]
   end
 end
