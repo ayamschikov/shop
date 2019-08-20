@@ -5,17 +5,17 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   test 'invalid without name' do
     user = build(:user, name: nil)
-    assert_not user.valid?
+    assert user.invalid?
   end
 
   test 'invalid without surname' do
     user = build(:user, surname: nil)
-    assert_not user.valid?
+    assert user.invalid?
   end
 
   test 'invalid with incorrect email' do
     user = build(:user, email: 'incorrect_email')
-    assert_not user.valid?
+    assert user.invalid?
   end
 
   test 'email should be unique' do
@@ -28,6 +28,6 @@ class UserTest < ActiveSupport::TestCase
 
   test 'user should not accept incorrect role' do
     user = build(:user, role: :some_test_role)
-    assert_not user.valid?
+    assert user.invalid?
   end
 end

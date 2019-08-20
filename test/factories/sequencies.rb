@@ -4,10 +4,10 @@ FactoryBot.define do
   sequence :email do |n|
     "person#{n}@example.com"
   end
-  sequence :price do |n|
+  sequence Money, 100, aliases: %i[price] do |n|
     Money.new(n, 'USD')
   end
-  sequence :string, aliases: %i[name surname short_description full_description password password_confirmation] do |n|
+  sequence :string, aliases: %i[name surname short_description full_description password] do |n|
     "user-#{n}"
   end
   sequence :integer, aliases: %i[amount] do |n|

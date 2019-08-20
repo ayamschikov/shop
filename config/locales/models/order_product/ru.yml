@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        order_product:
+          attributes:
+            product:
+              required: "выберите продукт"
+            amount:
+              invalid_amount_of_products: "недостаточно материалов на складе"

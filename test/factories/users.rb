@@ -6,6 +6,6 @@ FactoryBot.define do
     surname
     email
     password
-    password_confirmation
+    password_confirmation { password }
   end
 end
