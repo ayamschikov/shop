@@ -2,7 +2,7 @@
 
 class Product < ApplicationRecord
   include ProductRepository
-  include AASM
+  include Concerns::SoftDeletable
 
   has_many :order_products
   has_many :orders, through: :order_products
@@ -15,15 +15,6 @@ class Product < ApplicationRecord
   validates :full_description, length: { maximum: 500 }
 
   monetize :price_cents, numericality: { greater_than: 0 }, presence: true
-
-  aasm do
-    state :actual, initial: true
-    state :deleted
-
-    event :remove do
-      transitions from: :actual, to: :deleted
-    end
-  end
 
   def full_name
     "#{name}, #{price}"

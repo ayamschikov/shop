@@ -2,7 +2,7 @@
 
 class Order < ApplicationRecord
   include OrderRepository
-  include AASM
+  include Concerns::SoftDeletable
 
   belongs_to :user
 
@@ -12,15 +12,6 @@ class Order < ApplicationRecord
   accepts_nested_attributes_for :order_products
 
   monetize :total_price_cents, presence: true
-
-  aasm do
-    state :actual, initial: true
-    state :deleted
-
-    event :remove do
-      transitions from: :actual, to: :deleted
-    end
-  end
 
   before_save :set_order_total_price
 
