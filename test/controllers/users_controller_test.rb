@@ -7,7 +7,8 @@ class Web::Admin::UsersControllerTest < ActionController::TestCase
 
   def setup
     @request.env['devise.mapping'] = Devise.mappings[:user]
-    sign_in FactoryBot.create(:user)
+    user = create(:user)
+    sign_in user
   end
 
   setup do

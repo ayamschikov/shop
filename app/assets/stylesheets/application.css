@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ .bs-10 {
+    border-collapse:separate;
+    border-spacing: 0px 10px;
+ }
