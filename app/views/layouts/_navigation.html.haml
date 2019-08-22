@@ -12,6 +12,8 @@
           - if current_user.role == "admin"
             %li= link_to "Пользователи", admin_users_path
             %li= link_to "Продукты", admin_products_path
+            %li= link_to "Корзина", admin_orders_path
           - else
             %li= link_to "Продукты", admin_products_path
+            %li= link_to "Корзина", admin_orders_path
           %li= link_to "Account: #{current_user.email}", admin_user_path(current_user)
