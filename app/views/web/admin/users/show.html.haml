@@ -1,13 +1,14 @@
 %p
-  %strong= User.human_attribute_name(:name)
+  %strong.col-md-2= User.human_attribute_name(:name)
   = @user.name
 %p
-  %strong= User.human_attribute_name(:surname)
+  %strong.col-md-2= User.human_attribute_name(:surname)
   = @user.surname
 %p 
-  %strong= User.human_attribute_name(:email)
+  %strong.col-md-2= User.human_attribute_name(:email)
   = @user.email
 %p 
-  %strong= User.human_attribute_name(:role)
+  %strong.col-md-2= User.human_attribute_name(:role)
   = @user.role
-= link_to t(:back), admin_users_path
+%p 
+= link_to t(:back), admin_users_path, class: "btn btn-link"

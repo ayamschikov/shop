@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::Admin::ProductsController < ApplicationController
+class Web::Admin::ProductsController < Web::Admin::ApplicationController
   def index
     @products = Product.actual
   end

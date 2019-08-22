@@ -48,6 +48,12 @@ gem 'money-rails', '~>1.12'
 gem 'russian', '~> 0.6.0'
 gem 'simple_form'
 
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails'
+
+gem 'bootstrap4-kaminari-views'
+gem 'kaminari'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

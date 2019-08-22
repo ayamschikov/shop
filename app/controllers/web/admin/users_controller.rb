@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::Admin::UsersController < ApplicationController
+class Web::Admin::UsersController < Web::Admin::ApplicationController
   def index
     @users = User.all
   end
@@ -47,6 +47,6 @@ class Web::Admin::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :surname, :email, :role)
+    params.require(:user).permit(:name, :surname, :email, :role, :password, :password_confirmation)
   end
 end
